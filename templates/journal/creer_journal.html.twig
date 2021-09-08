@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Création de Journal
+{% endblock %}
+
+{% block body %}
+	<div class="container pt-5">
+		<div class="row">
+            {% include "shared/_messages_flash.html.twig" %}
+			<div class="card col-12">
+				<div class="card-header">
+
+					<h2>Créer un Journal</h2>
+					<div class="card-body">
+						{{ form_start(formJournal) }}
+
+						{{ form_widget(formJournal) }}
+
+						<button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+
+						{{ form_end(formJournal) }}
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

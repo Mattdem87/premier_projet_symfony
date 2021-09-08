@@ -4,47 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<h1>
+	<div class="container pt-5">
+		<h1>Page d'acceuil</h1>
+	</div>
 
-		Hello
-		{{ prenom }}
-	</h1>
-	<h1>
-		Mon age est :
-		{{ age }}
-		ans
-	</h1>
-
-	{% if age >= 18 %}
-		<p>
-			Je suis majeur
-		</p>
-
-	{% else %}
-		<p>
-			je suis mineur
-		</p>
-
-		<h1>
-			{{ cat }}
-		</h1>
-	{% endif %}
-
-	{% for item in pokemons %}
-		<p>
-			je suis le pokemon :
-			{{ item | upper}}
-		</p>
-
-	{% endfor %}
-
-	<h1>
-		Je suis Naroto
-		{{ ninja.village }}
-	</h1>
-
-	<h1>
-		Mon renard est
-		{{ ninja.renard }}
-	</h1>
 {% endblock %}

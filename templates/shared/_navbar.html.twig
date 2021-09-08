@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#">Navbar</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarColor01">
+			<ul class="navbar-nav me-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{{(path('home'))}}">Accueil</a>
+				</li>
+
+				{% if app.user %}
+
+					{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('creer_article')}}">Créer article</a>
+						</li>
+
+					{% endif %}
+
+				{% endif %}
+
+
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('liste_article')}}">Liste articles</a>
+				</li>
+				{% if app.user %}
+
+					{% if app.user.roles[0] is same as "ROLE_ADMIN" %}
+						<li class="nav-item">
+							<a class="nav-link" href="{{path('create_journal')}}">Créer journal</a>
+						</li>
+
+					{% endif %}
+
+				{% endif %}
+
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('liste_journal')}}">Liste des journaux</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{path('app_register')}}">Créer un compte</a>
+				</li>
+
+
+				{% if app.user %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_logout')}}">Se déconnecter</a>
+					</li>
+
+				{% else %}
+
+					<li class="nav-item">
+						<a class="nav-link" href="{{path('app_login')}}">Se connecter</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+</nav>
